@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台中兩天一夜婦幼展之旅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F4EFEC; 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .title-text {
+            color: #706d6a; 
+        }
+        .note {
+            background-color: #EFD9C4; 
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 8px;
+            color: #766857;
+            font-weight: 500;
+        }
+        .tab-button {
+            background-color: #d7ccc8; 
+            color: #4e342e;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin: 4px;
+            cursor: pointer;
+        }
+        .tab-button:hover {
+            background-color: #a1887f;
+        }
+        .content {
+            display: none;
+        }
+        .content.active {
+            display: block;
+        }
+        .timeline {
+            position: relative;
+            margin-left: 20px;
+            padding-left: 20px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #d7ccc8; 
+        }
+        .timeline-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .timeline-item:nth-child(odd) {
+            background-color: #999b85;
+        }
+        .timeline-item:nth-child(even) {
+            background-color: #d1a0a2;
+        }
+        .timeline-time {
+            font-weight: 600;
+            color: #393939;
+        }
+        .card {
+            width: calc(33% - 1rem);
+            margin: 0.5rem;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .card .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #3d3d3d;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 1rem);
+            }
+        }
+        .mochaBG {
+            background-color:#999B85;
+            color: #fff;
+        }
+    </style>
+    <script>
+        function switchTab(tabId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach((content) => content.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            switchTab("day1");
+        });
+    </script>
+</head>
+<body class="p-4">
+
+    <header class="text-center mb-6">
+        <h1 class="text-3xl font-bold title-text">📅 台中兩天一夜婦幼展之旅</h1>
+        <p class="text-lg text-gray-600">旅遊日期：8/23~8/24 | 成員：兩位大人和一歲寶寶</p>
+    </header>
+
+    <nav class="text-center mb-6">
+        <button class="tab-button" onclick="switchTab('day1')">第一天行程</button>
+        <button class="tab-button" onclick="switchTab('day2')">第二天行程</button>
+        <button class="tab-button" onclick="switchTab('restaurants')">餐廳資訊</button>
+        <button class="tab-button" onclick="switchTab('tickets')">門票資訊</button>
+        <button class="tab-button" onclick="switchTab('transportation')">交通資訊</button>
+        <button class="tab-button" onclick="switchTab('accommodation')">住宿資訊</button>
+    </nav>
+
+    <!-- 第一天天行程 -->
+    <div id="day1" class="content active">
+        <h2 class="text-2xl font-bold title-text mb-4">第一天行程</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <p class="timeline-time">08:00 - 08:30</p>
+                <p>抵達台中高鐵站後寄放行李。</p>
+                <div class="note">寄物櫃位置：高鐵台中站內，每3小時40元。</div>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">08:30 - 09:00</p>
+                <p>搭乘計程車前往台中國際展覽館（婦幼展）。</p>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">09:00 - 12:30</p>
+                <p>探索婦幼展各大品牌展區，參與活動並收集贈品。</p>
+                <div class="note">展覽地址：台中市烏日區中山路三段1號。</div>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">12:30 - 14:00</p>
+                <p>午餐於展會內或附近餐廳，稍作休息。</p>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">14:00 - 17:30</p>
+                <p>再進一步探索展覽，參與有趣體驗及拍照留念。</p>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">17:30 - 18:00</p>
+                <p>返回高鐵站取回行李，前往台中火車站附近酒店入住。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 第二天天行程 -->
+    <div id="day2" class="content">
+        <h2 class="text-2xl font-bold title-text mb-4">第二天行程</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <p class="timeline-time">08:00 - 09:30</p>
+                <p>飯店內享用早餐。</p>
+                <div class="note">酒店餐點提供多樣選擇，適合家庭用餐。</div>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">10:00 - 11:30</p>
+                <p>步行至台中文學館或綠川公園散步，享受輕鬆的親子時光。</p>
+                <div class="note">文學館地址：台中市建國路。</div>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">11:30 - 13:00</p>
+                <p>午餐於台中火車站附近的親子友善餐館。</p>
+            </div>
+            <div class="timeline-item">
+                <p class="timeline-time">13:00 - 15:00</p>
+                <p>參觀台中歷史建築或品味綠川沿岸文化景色。</p>
+                <div class="note">此行程方便徒步，不需搭乘交通工具。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 餐廳資訊 -->
+    <div id="restaurants" class="content">
+        <h2 class="text-2xl font-bold title-text mb-4">🍽️ 餐廳資訊</h2>
+        <div class="card mochaBG">
+            <p class="title text-lg">親子友善餐廳</p>
+            <p>位置：台中市附近，步行可達。</p>
+            <p>特色：健康餐飲和兒童角，方便家庭用餐。</p>
+        </div>
+    </div>
+
+    <!-- 門票資訊 -->
+    <div id="tickets" class="content">
+        <h2 class="text-2xl font-bold title-text mb-4">🎟️ 門票資訊</h2>
+        <div class="card mochaBG">
+            <p class="title">婦幼展</p>
+            <p>地點：台中國際展覽館</p>
+            <p>門票：免費入場。</p>
+        </div>
+    </div>
+
+    <!-- 交通資訊 -->
+    <div id="transportation" class="content">
+        <h2 class="text-2xl font-bold title-text mb-4">🚗 交通資訊</h2>
+        <div class="card mochaBG">
+            <p class="title">計程車</p>
+            <p>高鐵站至展覽館約10分鐘，費用約200元。</p>
+        </div>
+    </div>
+
+    <!-- 住宿資訊 -->
+    <div id="accommodation" class="content">
+        <h2 class="text-2xl font-bold title-text mb-4">🏨 住宿資訊</h2>
+        <div class="card mochaBG">
+            <p class="title text-lg">葉綠宿．茶覺旅</p>
+            <img src="https://ac-a.static.booking.cn/xdata/images/hotel/max1024x768/454830232.jpg" alt="葉綠宿酒店照片" class="rounded">
+            <p>位置：台中火車站附近。</p>
+            <p>服務：家庭友善、提供嬰兒浴盆與便利設施。</p>
+        </div>
+    </div>
+
+</body>
+</html>
